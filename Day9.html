@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom Manipulation</title>
+</head>
+<style></style>
+
+<body style="background-color: #212121; color: white;">
+    <h2 id="task1">Selecting and Manipulating DOM</h2>
+    <button class="task2">Change Colour</button>
+    <ul id="task4">
+        <li>Water</li>
+        <li>Tea</li>
+    </ul>
+    <p id="task5">This paragraph was removed from DOM</p>
+    <img id="task7" src="" alt="image">
+    <h1 id="header">Welcome to the coding zone!</h1>
+</body>
+<script>
+    // Activity 1 : Selecting and Manipulating Elements
+    // Task 1 - Select an HTML element by its ID and change its text content
+    document.getElementById("task1").textContent = "change text content using ID"
+
+    // Task 2 - Select an HTML element by its class and change its background color
+    document.querySelector(".task2").style.backgroundColor = "Blue"
+
+    // Activity 2 : Creating and APending Elements
+    // Task 3 - Create a new div element with some text content and append it to the body
+    const newDiv = document.createElement("div")
+    newDiv.innerText = "Content created in new div"
+    document.querySelector("body").appendChild(newDiv)
+
+    // Task 4 - Create a new li element and add it to an existing ul list
+    const newLi = document.createElement("li")
+    newLi.innerText = "Juice"
+    document.getElementById("task4").appendChild(newLi)
+
+    // Actiity 3 : Removing elements
+    // Task 5 - Select an HTML element and remove it from the DOM
+    const removeIt = document.getElementById("task5")
+    removeIt.remove()
+
+    // Task 6 - Remove the last child of a specific HTML element
+    const lastLi = document.getElementsByTagName("li")
+    lastLi[lastLi.length - 1].remove()
+
+    // Activity 4 : Modifying Attributes and Classes
+    // Task 7 - Select an HTML element and chnage one of its attributes(e.g.,src of an img tag)
+    const img = document.getElementById("task7")
+    img.setAttribute("src", "cat1.jpg")
+
+    // Task 8 - Add and remove a CSS class to/from an HTML element
+    const element = document.getElementById("header")
+    element.classList.add("new-Class")
+    element.classList.remove("new-Class")
+
+    // Activity 5 : Event Handling
+    //  Task 9 - Add a click event listener to abutton that changes the text content of a paragraph
+    const button = document.getElementById('changeTextButon')
+    const paragraph = document.querySelector('.para')
+    button.addEventListener("click", () => {
+        paragrap.textContent = "The text content has been changed!"
+    })
+    // Task 10 - Add a mouseover event listener to an element that changes its border color
+</script>
+
+</html>
